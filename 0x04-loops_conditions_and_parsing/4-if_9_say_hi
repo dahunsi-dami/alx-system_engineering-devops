@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 # This  script displays Best School 10 times with an until loop
 STR="Best School"
-c=0
+c=1
 E="Hi"
-until [ $c -ge 10 ];
+while [ $c -le 10 ];
 do
-	if [ $c -eq 8 ]
+	if [ $c -eq 9 ]
 	then
 		echo "$STR"
 		echo "$E"
 		((c++))
+	else
+		echo "$STR"
+		((c++))
 	fi
-	echo "$STR"
-	((c++))
 done
