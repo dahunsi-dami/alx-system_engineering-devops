@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This  script displays Best School 10 times with an until loop
+STR="Best School"
+c=0
+until [ $c -ge 10 ];
+do
+	echo "$STR"
+	((c++))
+done
