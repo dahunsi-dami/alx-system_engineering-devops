@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This kills 7-highlander
+kill -9 "$(top | pgrep -f "7-highlander")"
