@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This shows PID, process name, of process whose name contain 'bash'
+# Requirements:
+# You can't use ps
+top | pgrep -f "bash" | awk '{ print $1, "bash" }'
