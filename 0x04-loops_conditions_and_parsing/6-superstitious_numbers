@@ -11,10 +11,10 @@ S="bad luck from Italy"
 while [ $c -le 20 ];
 do
 	echo "$c"
-	((c++))
 	case $c in
 	4) echo "$F" ;;
 	9) echo "$N" ;;
 	17) echo "$S" ;;
 	esac
+	((c++))
 done
