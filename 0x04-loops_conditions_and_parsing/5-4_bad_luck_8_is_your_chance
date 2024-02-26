@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Loops from 1-10, prints str for 4th, 8th, and other iterations.
+STR="Best School"
+c=1
+F="bad luck"
+E="good luck"
+while [ $c -le 10 ];
+do
+	if [ $c -eq 4 ]
+	then
+		echo "$F"
+		((c++))
+	elif [ $c -eq 8 ]
+	then
+		echo "$E"
+		((c++))
+	else
+		echo "$STR"
+		((c++))
+	fi
+done
