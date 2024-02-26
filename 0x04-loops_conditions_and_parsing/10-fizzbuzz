@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#Displays numbers from 1 to 100
+#
+#Requirements:
+#Displays FizzBuzz when num is multiple of 3 & 5
+#Displays Fizz when num is multiple of 3
+#Displays Buzz when num is multiple of 5
+N=1
+while [ $N -le 100 ];
+do
+	if [ $((N%3)) -eq 0 ] && [ $((N%5)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+		((N++))
+	elif [ $((N%3)) -eq 0 ]
+	then
+		echo "Fizz"
+		((N++))
+	elif [ $((N%5)) -eq 0 ]
+	then
+		echo "Buzz"
+		((N++))
+	else
+		echo "$N"
+		((N++))
+	fi
+done
