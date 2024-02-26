@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#Loops from 1-20, prints a specific strings for 4th, 8th & others.
+#
+#Requirements:
+#Must use while loop (for & until are forbidden)
+#Must use case statement
+c=1
+F="bad luck from China"
+N="bad luck from Japan"
+S="bad luck from Italy"
+while [ $c -le 20 ];
+do
+	case $c in
+	4) echo "$F" ;;
+	9) echo "$N" ;;
+	17) echo "$S" ;;
+	*) echo "$c" ;;
+	esac
+	((c++));
+done
