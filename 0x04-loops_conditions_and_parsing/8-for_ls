@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Shows content of pwd in list format
+#excluding part before 1st dash & 1st dash
+CPWD="$(find -- * | sed 's/.*-//')"
+for i in $CPWD;
+do
+	echo "$i"
+done
