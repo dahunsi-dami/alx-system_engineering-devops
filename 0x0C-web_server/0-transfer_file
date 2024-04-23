@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # Transfers a file, some_page.html, from client to server w/ scp.
-if [[ $# -eq 4 ]]
-then
-#  eval "$(ssh-agent)"
-#  ssh-add "$4"
-  scp -o StrictHostKeyChecking=no "$1" "$3"@"$2":~/
-elif [[ $# -le 3 ]]
+if [[ $# -lt 3 ]]
 then
   echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+elif [[ $# -lt 4 ]]
+then
+  scp -o StrictHostKeyChecking=no "$1" "$3"@"$2":~/
+else
+  eval "$(ssh-agent)"
+  ssh-add "$4"
+  scp -i "$4" -o StrictHostKeyChecking=no "$1" "$3"@"$2":~/
 fi
