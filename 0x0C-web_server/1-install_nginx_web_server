@@ -9,13 +9,13 @@ apt-get update
 apt-get -y install nginx
 
 # Start Nginx
-# service nginx start
+service nginx start
 
 # I need to create rules before enabling firewall to avoid denying
 # all incoming connections.
 
 # First, allow connections through SSH on port 22.
-# ufw allow OpenSSH
+ufw allow OpenSSH
 
 # Second, allow connections through http on its port 80.
 ufw allow 'Nginx HTTP'
@@ -42,4 +42,4 @@ chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
 
 # Restart Nginx without using systemctl.
-service nginx start
+service nginx restart
