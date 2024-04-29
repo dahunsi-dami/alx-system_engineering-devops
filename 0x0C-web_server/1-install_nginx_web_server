@@ -9,7 +9,7 @@ apt-get update
 apt-get -y install nginx
 
 # Start Nginx
-service nginx start
+# service nginx start
 
 # I need to create rules before enabling firewall to avoid denying
 # all incoming connections.
@@ -42,4 +42,4 @@ fi
 echo "Hello World!" > /var/www/html/index.html
 
 # Restart Nginx without using systemctl.
-service nginx restart
+service nginx start
