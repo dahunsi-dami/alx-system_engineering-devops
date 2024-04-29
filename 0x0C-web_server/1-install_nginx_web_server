@@ -34,9 +34,9 @@ chown -R "$USER:$USER" /var/www/html
 chmod -R 755 /var/www
 
 # If index.html already exists in /html, back it up.
-if [[ -f /var/www/html/index.html ]]; then
-  cp /var/www/html/index.html /var/www/html/index.bak
-fi
+# if [[ -f /var/www/html/index.html ]]; then
+#  cp /var/www/html/index.html /var/www/html/index.bak
+# fi
 
 # Create index.html file with "Hello World!" string
 echo "Hello World!" > /var/www/html/index.html
