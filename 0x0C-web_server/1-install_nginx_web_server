@@ -8,11 +8,14 @@ sudo apt-get update
 # Install Nginx and agree to all prompts.
 sudo apt-get -y install nginx
 
+# Start Nginx
+sudo service nginx start
+
 # I need to create rules before enabling firewall to avoid denying
 # all incoming connections.
 
 # First, allow connections through SSH on port 22.
-# sudo ufw allow OpenSSH
+sudo ufw allow OpenSSH
 
 # Second, allow connections through http on its port 80.
 sudo ufw allow 'Nginx HTTP'
