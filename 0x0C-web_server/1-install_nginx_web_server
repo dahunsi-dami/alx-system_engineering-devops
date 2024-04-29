@@ -15,7 +15,7 @@ service nginx start
 # all incoming connections.
 
 # First, allow connections through SSH on port 22.
-ufw allow OpenSSH
+# ufw allow OpenSSH
 
 # Second, allow connections through http on its port 80.
 ufw allow 'Nginx HTTP'
