@@ -12,7 +12,7 @@ sudo apt-get -y install nginx
 # all incoming connections.
 
 # First, allow connections through SSH on port 22.
-sudo ufw allow OpenSSH
+# sudo ufw allow OpenSSH
 
 # Second, allow connections through http on its port 80.
 sudo ufw allow 'Nginx HTTP'
