@@ -3,41 +3,43 @@
 # when queried at root.
 
 # Update the server.
-sudo apt-get update
+apt-get update
 
 # Install Nginx and agree to all prompts.
-sudo apt-get -y install nginx
+apt-get -y install nginx
 
 # Start Nginx
-sudo service nginx start
+service nginx start
 
 # I need to create rules before enabling firewall to avoid denying
 # all incoming connections.
 
 # First, allow connections through SSH on port 22.
-sudo ufw allow OpenSSH
+ufw allow OpenSSH
 
 # Second, allow connections through http on its port 80.
-sudo ufw allow 'Nginx HTTP'
+ufw allow 'Nginx HTTP'
 
 # Enable the firewall.
-sudo ufw enable
+ufw enable
 
 # Ensure Nginx has permissions to read & write files in root dir.
 
 # First, assign ownership of html to user running script
 # so they have full control over web server files.
-sudo chown -R "$USER:$USER" /var/www/html
+chown -R "$USER:$USER" /var/www/html
 
 # Second, set permissions of /var/www & its files to rwx for user,
 # r-x for group and others.
-sudo chmod -R 755 /var/www/html
+chmod -R 755 /var/www
 
 # If index.html already exists in /html, back it up.
 if [[ -f /var/www/html/index.html ]]; then
   cp /var/www/html/index.html /var/www/html/index.bak
 fi
+
+# Create index.html file with "Hello World!" string
 echo "Hello World!" > /var/www/html/index.html
 
 # Restart Nginx without using systemctl.
-sudo service nginx restart
+service nginx restart
