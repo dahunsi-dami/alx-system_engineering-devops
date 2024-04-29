@@ -21,7 +21,7 @@ service nginx start
 ufw allow 'Nginx HTTP'
 
 # Enable the firewall.
-ufw enable
+# ufw enable
 
 # Ensure Nginx has permissions to read & write files in root dir.
 
