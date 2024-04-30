@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Install & config HAproxy on lb-01 server to send traffic to web-01
+# and web-02.
+
+# Update the server.
+apt-get update
+
+# Install Nginx and agree to all prompts.
+apt-get -y install haproxy
+
+# Create addition for haproxy.cfg file
+addition=\
+"
+frontend external_end
+  bind *:80
+	mode http
+	default_backend internal_end
+
+backend internal_end
+  balance roundrobin
+	server 530476-web-01 54.89.109.98:80 check
+  server 530476-web-02 3.89.155.105:80 check
+"
+
+# First, assign ownership of haproxy to user running script
+# so they have full control over web server files.
+chown -R "$USER:$USER" /etc/haproxy
+
+# Second, set permissions of /etc/haproxy & its files to rwx for user,
+# r-x for group and others.
+chmod -R 755 /etc/haproxy
+
+# Append addition to haproxy.cfg
+echo "$addition" >> /etc/haproxy/haproxy.cfg
+
+# First, assign ownership of default to user running script
+# so they have full control over web server files.
+chown -R "$USER:$USER" /etc/default
+
+# Second, set permissions of /var/www & its files to rwx for user,
+# r-x for group and others.
+chmod -R 755 /etc/default
+
+# Make haproxy startable automatically with init script
+echo "ENABLED=1" >> /etc/default/haproxy
+
+# Test configuration
+haproxy -c -f /etc/haproxy/haproxy.cfg
+
+# Restart haproxy
+sudo service haproxy restart
