@@ -1,0 +1,1 @@
+This repository contains submissions of practice tasks under the "0x11. What happens when you type google.com in your browser and press Enter" project of the ALX-Holberton software engineering program.
