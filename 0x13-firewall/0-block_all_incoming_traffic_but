@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Install ufw firewall and setup few rules on web-01
+
+# Update the Ubuntu server with auto-yes to prompts.
+sudo apt-get -y update
+
+# Install ufw with auto-yes to prompts.
+sudo apt-get -y install ufw
+
+# Set default Ufw incoming policy to deny.
+sudo ufw default deny incoming
+
+# Set ufw default outgoing policy to allow.
+sudo ufw default allow outgoing
+
+# Allow SSH connections through port 22.
+sudo ufw allow OpenSSH
+
+# Allow HTTP connection through port 80.
+sudo ufw allow 'Nginx HTTP'
+
+# Allow HTTPS connections through port 443.
+sudo ufw allow 'Nginx HTTPS'
+
+# Enable the firewall
+sudo ufw enable
