@@ -14,13 +14,13 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # Allow SSH connections through port 22.
-sudo ufw allow OpenSSH
+sudo ufw allow 22/tcp
 
 # Allow HTTP connection through port 80.
-sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 80/tcp
 
 # Allow HTTPS connections through port 443.
-sudo ufw allow 'Nginx HTTPS'
+sudo ufw allow 443/tcp
 
 # Enable the firewall
 sudo ufw enable
