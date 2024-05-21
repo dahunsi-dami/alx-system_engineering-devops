@@ -30,4 +30,4 @@ if __name__ == '__main__':
         for item in todos:
             comp = item['completed']
             title = item['title']
-            file.write(f'"{empId}", "{empUName}", "{comp}", "{title}"\n')
+            file.write(f'"{empId}","{empUName}","{comp}","{title}"\n')
