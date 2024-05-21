@@ -4,9 +4,9 @@ Returns info about employee's todo list progress,
 and export data in json format.
 """
 
+import json
 import requests
 import sys
-import json
 
 
 if __name__ == '__main__':
