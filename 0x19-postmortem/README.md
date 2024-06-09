@@ -24,7 +24,7 @@ At 3:52 PM, the issue was fixed and all web app elements loaded properly.
 
 ## Corrective and Preventative Measures
 After analyzing this incident, we’re taking the following actions to prevent such an occurrence from happening in the future.
-Update documentation and give engineers training on the impact of firewall configuration changes.
-Put stricter change management protocols in place to review firewall changes.
-Enhance our monitoring tools to detect specific port connectivity issues more quickly and alert the engineers.
-Integrate automated testing for changes to the firewall configuration to catch issues before deployment.
+- Update documentation and give engineers training on the impact of firewall configuration changes.
+- Put stricter change management protocols in place to review firewall changes.
+- Enhance our monitoring tools to detect specific port connectivity issues more quickly and alert the engineers.
+- Integrate automated testing for changes to the firewall configuration to catch issues before deployment.
